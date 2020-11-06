@@ -7,7 +7,7 @@ python3 analyze_files.py --fn <folder_name> --p <percent>
 
 I would check this program as follows:
 
-1. There is no files for analyzing in folder
+1. There are no files for analyzing in folder
 2. There are not only files for analyzing but others files with another names, and subdirectories as well
 3. Check if files for analyzing are not executable. It may be dangerous to open them
 4. Check format of input files:

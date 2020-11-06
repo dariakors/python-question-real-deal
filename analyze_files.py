@@ -11,7 +11,7 @@ def parse_file(file_name, cnt):
     with open(file_name, 'r') as f:
         for line in f:
 
-            # check if there are not letters and specia symbols in file
+            # check if there are not letters and special symbols in file
             if re.search('[a-zA-Z@_!#$%^&*()<>?/|}{~:]', line):
                 raise FileFormatException("File format is not supported")
 
@@ -21,8 +21,7 @@ def parse_file(file_name, cnt):
             if len(splitted_list) != 5:
                 raise FileFormatException("File is empty or file format is not supported")
 
-            a = splitted_list[0]
-            cnt[a] += 1
+            cnt[splitted_list[0]] += 1
 
 
 def analyze_files(folder_name, percent) -> list:
@@ -34,7 +33,7 @@ def analyze_files(folder_name, percent) -> list:
         folder_content = re.match(r'(^result_p1[01]\.[02468]_p2[01]\.[02468].txt$)', f)
         if folder_content and os.path.isfile(f):
 
-            #check if file is not executable
+            # check if file is not executable
             if os.access(f, os.X_OK):
                 raise ExecutableFileException("Ahtung! File is executable!")
 
